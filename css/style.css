@@ -15,9 +15,17 @@ h1 {
 
 .gallery {
   display: grid;
-  grid-template-columns: repeat(5, 1fr); /* 5 columnas */
+  grid-template-columns: repeat(2, 1fr); /* 5 columnas */
   gap: 10px; /* espacio entre tarjetas */
   padding: 20px;
+}
+
+/* Base (móvil) */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columnas en celulares */
+  gap: 10px;
+  padding: 10px;
 }
 
 .gallery-item {
@@ -78,4 +86,22 @@ h1 {
   max-height: 200px; /* controlás altura */
   object-fit: cover; /* mantiene proporción recortando */
   border-radius: 5px;
+}
+
+@media (min-width: 600px) {
+  .gallery {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+}
+
+@media (min-width: 900px) {
+  .gallery {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
+@media (min-width: 1200px) {
+  .gallery {
+    grid-template-columns: repeat(5, 1fr);
+  }
 }

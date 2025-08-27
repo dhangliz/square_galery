@@ -14,7 +14,6 @@ function renderFilms(films) {
   films.forEach(film => {
     const card = document.createElement("div");
     card.className = "card";
-    debugger;
     card.innerHTML = `
       <img src="${film.image}" alt="${film.title}" />
       <h3>${film.title}</h3>
